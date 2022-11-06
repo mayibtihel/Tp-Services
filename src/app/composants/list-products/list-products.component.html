@@ -1,0 +1,13 @@
+<p>hello list products</p>
+
+<label >libelle: </label>
+<input type="text" [(ngModel)]="text" >
+<button (click)="ChercherP()">Chrecher</button>
+<br>
+ <h2>{{len}}</h2>
+<div *ngFor="let p of ListProduct  let j = index">
+    <h4>IdProduct:  {{ p.idProduct}} -- Code: {{ p.code}} -- Libelle:  {{ p.libelle}} -- Prixunitaire: {{ p.prixunitaire}} -- TauxTva: {{ p.tauxTva}}</h4>
+    <button (click)="chercherPbyL(p.libelle); selectedRow=j">Calculer</button>
+    <h2 [hidden]="selectedRow !== j">{{data}}</h2>
+
+</div>
